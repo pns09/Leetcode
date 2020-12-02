@@ -17,6 +17,7 @@ const findDuplicates = (nums) => {
 		}
 	}
 	return newArray;
+
 };
 
 console.log(findDuplicates([4, 3, 2, 7, 2, 1, 3, 6]));
