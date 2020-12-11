@@ -1,5 +1,4 @@
 // 156 / 156 test cases passed.
-// Status: Accepted
 // Runtime: 192 ms
 // Memory Usage: 43.3 MB
 

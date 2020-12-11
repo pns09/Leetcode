@@ -15,7 +15,7 @@ const search = (s) => {
         map[arr[i]] = i
     }
     
-    return maxLen
+    return maxLen;
 
 };
 
