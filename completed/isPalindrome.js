@@ -1,20 +1,17 @@
 //
 // -----------------------------------------------------------------------------------------------------------------
-// My solution....Number Palindrome 
-// ----------------------------------------------------------------------------------------------------------------- 
-var isNumPalindrome = function(x) {
-  var num = x.toString();
-  var arr = num
-    .split("")
-    .reverse()
-    .join("");
-  if (x == arr) {
-    console.log(true);
-  } else console.log(false);
+// My solution....Number Palindrome
+// -----------------------------------------------------------------------------------------------------------------
+var isNumPalindrome = function (x) {
+	var num = x.toString();
+	var arr = num.split("").reverse().join("");
+	if (x == arr) {
+		console.log(true);
+	} else console.log(false);
 };
 
 // -----------------------------------------------------------------------------------------------------------------
-// String Palindrome 
+// String Palindrome
 // -----------------------------------------------------------------------------------------------------------------
 // clear and easy solution considering all the edge cases.
 // var isPalindrome = function(s) {

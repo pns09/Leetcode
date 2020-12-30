@@ -3,13 +3,13 @@
  * @return {number}
  */
 //My solution using search but can you do it without using inbuilt methods.
-// var strStr = function (haystack, needle) {
-// 	if (0 <= haystack.length && needle.length <= 5 * Math.pow(10, 4)) {
-// 		return haystack.search(needle);
-// 	} else {
-// 		return -1;
-// 	}
-// };
+var strStr = function (haystack, needle) {
+	if (0 <= haystack.length && needle.length <= 5 * Math.pow(10, 4)) {
+		return haystack.search(needle);
+	} else {
+		return -1;
+	}
+};
 
 // Two pointer approach without using any of the in built methods.
 var strStr = function (haystack, needle) {
