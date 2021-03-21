@@ -5,22 +5,23 @@
 var lengthOfLongestSubstring = function (s) {
 	if (0 <= s.length <= 5 * 104) {
 		let uniqueStr = [...new Set(s.split(""))].join("");
-		if (s.search(uniqueStr) > 0) {
-			return uniqueStr.length;
-		} else {
-			for (let i = 0; i < uniqueStr.length; i++) {
-				let removeFirstChar = uniqueStr.substring(1);
-				if (s.search(removeFirstChar) > 0) {
-					return removeFirstChar.length;
-				}
+		let i = 0;
+		let subStr = "";
+		while (i < uniqueStr.length) {
+			let startChar = s.indexOf(uniqueStr[i]);
+			if (startChar + 1 == s.indexOf(uniqueStr[i + 1])) {
+				subStr += uniqueStr[i + 1];
+				i++;
+			} else{
+				uniqueStr.splice(uniqueStr.indexOf(uniqueStr[i]));
 			}
 		}
+		return subStr;
 	} else {
 		return 0;
 	}
 };
 console.log(lengthOfLongestSubstring((s = "abcabcbb")));
-
 
 // /**
 //  * @param {string} s
