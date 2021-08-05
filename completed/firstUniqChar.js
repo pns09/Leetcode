@@ -1,27 +1,43 @@
+// My soultion #1;
 /**
  * @param {string} s
  * @return {number}
  */
 var firstUniqChar = function (s) {
-	if (s.length == 0) {
-		return -1;
-	} else if (s.length == 1) {
-		return 0;
-	}
-	let sarr = s.split("");
-	let newarr = [...new Set(sarr)];
+  let map = {};
+  for (let i = 0; i < s.length; i++) {
+    map[s[i]] = (map[s[i]] || 0) + 1;
+  }
 
-	if (newarr.length >= 2) {
-		for (let i = 0; i < newarr.length; i++) {
-			if (s.lastIndexOf(newarr[i]) === s.indexOf(newarr[i])) return s.lastIndexOf(newarr[i]);
-		}
-		return -1;
-	} else {
-		return -1;
-	}
+  let mapArr = Object.keys(map);
+  for (let i = 0; i < s.length; i++) {
+    if (map[mapArr[i]] == 1) return s.indexOf(mapArr[i]);
+  }
+
+  return -1;
 };
 
-console.log(firstUniqChar("cc"));
+console.log(firstUniqChar('cc'));
+
+//   My solution #2
+// var firstUniqChar = function (s) {
+// 	if (s.length == 0) {
+// 		return -1;
+// 	} else if (s.length == 1) {
+// 		return 0;
+// 	}
+// 	let sarr = s.split("");
+// 	let newarr = [...new Set(sarr)];
+
+// 	if (newarr.length >= 2) {
+// 		for (let i = 0; i < newarr.length; i++) {
+// 			if (s.lastIndexOf(newarr[i]) === s.indexOf(newarr[i])) return s.lastIndexOf(newarr[i]);
+// 		}
+// 		return -1;
+// 	} else {
+// 		return -1;
+// 	}
+// };
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -115,4 +131,3 @@ console.log(firstUniqChar("cc"));
 // 		return -1;
 // 	}
 // };
-

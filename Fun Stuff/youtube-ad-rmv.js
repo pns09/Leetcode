@@ -5,3 +5,10 @@ const adRemove = setInterval(() => {
 		console.log("Skip ad button clicked!");
 	}
 }, 1000);
+
+
+// Cisco training
+// setInterval(() => {
+// 	const navEleIds = document.getElementById('nav-controls');
+// 	navEleIds.getElementsByTagName('button')[1].click();
+// }, 2000);

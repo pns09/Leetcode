@@ -8,17 +8,17 @@
  * @return {number[]}
  */
 var addToArrayForm = function (A, K) {
-	let num = "";
+  let num = '';
 
-	for (let i = 0; i < A.length; i++) {
-		num = num + A[i];
-	}
+  for (let i = 0; i < A.length; i++) {
+    num = num + A[i];
+  }
 
-	let res = BigInt(num) + BigInt(K);
+  let res = BigInt(num) + BigInt(K);
 
-	return ("" + res).split("").map((t) => {
-		return parseInt(t);
-	});
+  return ('' + res).split('').map((t) => {
+    return parseInt(t);
+  });
 };
 
 // Beats 100% solution.
