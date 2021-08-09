@@ -29,7 +29,8 @@
 
 // console.log(twoSum([2, 5, 5, 11], 10));
 
-// 3
+// 3 
+// Using hashMap method.
 // var twoSum = function (nums, target) {
 //   let mapObj = {};
 
