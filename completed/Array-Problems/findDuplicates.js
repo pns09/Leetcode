@@ -3,20 +3,17 @@
  * @return {number[]}
  */
 const findDuplicates = (nums) => {
-  let object = {};
-  let newArray = [];
-  function _has(num) {
-    return object.hasOwnProperty(num) ? true : false;
-  }
+  let obj = {};
+  let res = [];
+
   for (let i = 0; i < nums.length; i++) {
-    let index = nums[i];
-    if (_has(index)) {
-      newArray.push(index);
-    } else {
-      object[i] = index;
-    }
+    if (obj[nums[i]]) {
+      res.push(nums[i]);
+    } else;
+    obj[nums[i]] = 1;
   }
-  return newArray;
+
+  return res;
 };
 
 console.log(findDuplicates([4, 3, 2, 7, 2, 1, 3, 6]));
