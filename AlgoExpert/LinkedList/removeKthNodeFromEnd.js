@@ -14,12 +14,14 @@ function removeKthNodeFromEnd(head, k) {
     counter++;
     headCopy = headCopy.next;
   }
+
   let nodeToRemove = counter - k;
   if (nodeToRemove === 0) {
     head.value = head.next.value;
     head.next = head.next.next;
     return;
   }
+  
   let listPointer = 0;
   while (head != null) {
     if (listPointer === nodeToRemove - 1) {

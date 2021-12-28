@@ -12,13 +12,13 @@ function linkedListPalindrome(head) {
   let fastPointer = head;
   let previousNode = null;
 
-  // move fastPointer by 2; move slowPointer by only 1 to reach the mid-point of a linkedList
+  // Move fastPointer by 2; move slowPointer by only 1 to reach the mid-point of a linkedList
   while (fastPointer !== null) {
     slowPointer = slowPointer.next;
     fastPointer = fastPointer.next.next;
   }
 
-  //   Now, the slowPointer end location from above is the starting point to rotate the linked list to comapre
+  // Now, the slowPointer end location from above is the starting point to rotate the linked list to comapre
   while (slowPointer != null) {
     let currentNode = slowPointer.next;
     slowPointer.next = previousNode;
@@ -26,7 +26,7 @@ function linkedListPalindrome(head) {
     slowPointer = currentNode;
   }
 
-  // Finally, compare the give linked list with that of reversed linked list from above.
+  // Finally, compare the given linked list with that of reversed linked list from above.
   let listFromStart = head;
   while (previousNode != null) {
     if (listFromStart.value != previousNode.value) return false;

@@ -17,5 +17,25 @@ var isValid = function (s) {
 
   return openBracketsArr.length == 0 ? true : false;
 };
-
 console.log(isValid('['));
+
+// Variation
+var isValidParanthesis = (str) => {
+  let closedBrackets = [];
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === '(') {
+      closedBrackets.push(')');
+    } else {
+      if (closedBrackets.length && closedBrackets.pop() === ')') {
+      } else {
+        count++;
+      }
+    }
+  }
+  return count + closedBrackets.length;
+};
+
+console.log(isValidParanthesis(')('));
+// For example, given the string "()())()", you should return 1. 
+// Given the string ")(", you should return 2, since we must remove all of them.

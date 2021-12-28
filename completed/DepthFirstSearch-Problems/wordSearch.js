@@ -47,3 +47,43 @@ console.log(
     'AQB'
   )
 );
+
+// 2 - variation
+const dfs = (grid, i, j, word) => {
+  if (word.length === 0) {
+    return true;
+  }
+  if (i < 0 || j < 0 || i >= grid.length || j > grid[0].length || grid[i][j] !== word[0]) {
+    return false;
+  }
+
+  const char = grid[i][j];
+  grid[i][j] = '.';
+
+  let res = dfs(grid, i - 1, j, word.substring(1)) || dfs(grid, i + 1, j, word.substring(1)) || dfs(grid, i, j - 1, word.substring(1)) || dfs(grid, i, j + 1, word.substring(1));
+
+  grid[i][j] = char;
+  return res;
+};
+
+var findWord = (grid, word) => {
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[0].length; j++) {
+      if (dfs(grid, i, j, word)) {
+        return true;
+      }
+    }
+  }
+  return false;
+};
+
+console.log(
+  findWord(
+    [
+      ['A', 'B', 'C', 'E'],
+      ['S', 'F', 'C', 'S'],
+      ['A', 'D', 'E', 'E'],
+    ],
+    'ABCB'
+  )
+);

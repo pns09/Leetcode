@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .rating {
+      background-color: gold;
+    }
+  </style>
+  <body>
+    <div id="star-container" onmouseleave="colorStar(state.rating)">
+      <button onclick="setStar(1)" onmouseover="colorStar(1)"></button>
+      <button onclick="setStar(2)" onmouseover="colorStar(2)"></button>
+      <button onclick="setStar(3)" onmouseover="colorStar(3)"></button>
+      <button onclick="setStar(4)" onmouseover="colorStar(4)"></button>
+      <button onclick="setStar(5)" onmouseover="colorStar(5)"></button>
+    </div>
+
+    <script>
+      const starElems = document.getElementById('star-container').children;
+
+      const state = {
+        rating: 0,
+      };
+
+      function colorStar(num) {
+        for (let i = 0; i < starElems.length; i++) {
+          if (i < num) {
+            starElems[i].classList.add('rating');
+          } else {
+            starElems[i].classList.remove('rating');
+          }
+        }
+      }
+
+      function setStar(rating) {
+        state.rating = rating;
+        colorStar(rating);
+      }
+    </script>
+  </body>
+</html>

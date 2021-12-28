@@ -12,7 +12,7 @@ var searchInsert = function (nums, target) {
   if (nums[endIndex] < target) {
     return endIndex + 1;
   }
-  
+
   while (startIndex <= endIndex) {
     const middle = startIndex + Math.floor((endIndex - startIndex) / 2);
 
@@ -28,3 +28,10 @@ var searchInsert = function (nums, target) {
   if (nums[startIndex] > target) return startIndex;
   else return endIndex + 1;
 };
+
+console.log(searchInsert([1, 3, 5, 6], (target = 7)));
+// Input: nums = [1,3,5,6], target = 7
+// Output: 4
+
+// Input: (nums = [1, 3, 5, 6]), (target = 5);
+// Output: 2;

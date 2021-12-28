@@ -4,6 +4,7 @@
  * @return {number}
  */
 var maximumUnits = function (boxTypes, truckSize) {
+  // O(nlogn) | O(1)
   let unitCount = 0;
   boxTypes.sort((a, b) => (b[1] > a[1] ? 1 : -1));
 
@@ -18,3 +19,21 @@ var maximumUnits = function (boxTypes, truckSize) {
   }
   return unitCount;
 };
+
+console.log(
+  maximumUnits(
+    [
+      [1, 3],
+      [5, 5],
+      [2, 5],
+      [4, 2],
+      [4, 1],
+      [3, 1],
+      [2, 2],
+      [1, 3],
+      [2, 5],
+      [3, 2],
+    ],
+    35
+  )
+);
