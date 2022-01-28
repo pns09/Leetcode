@@ -2,6 +2,7 @@
  * @param {number[]} prices
  * @return {number}
  */
+// Best time to buy and sell stocks
 var maxProfit = function (prices) {
   //  O(n) | O(1)
   if (prices.length === 0) return 0;

@@ -3,6 +3,7 @@
  * @return {string}
  */
 var longestPalindrome = function (s) {
+  // O(N^2) | O(N)
   if (s.length === 1) return s;
 
   let maxLen = 0;

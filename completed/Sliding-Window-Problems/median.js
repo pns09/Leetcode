@@ -8,8 +8,8 @@ const median = (arr, k) => {
     subArr.push(arr[p1]);
     p1++;
     if (subArr.length === k) {
-      // median array of elements
-    //   when even items it is an average and when odd items it is the mid item from sorted array.
+      // Median array of elements
+      // When even items it is an average and when odd items it is the mid item from sorted array.
       const mid = Math.floor(subArr.length / 2),
         nums = subArr.sort((a, b) => a - b);
       subArr.length % 2 !== 0 ? result.push(nums[mid]) : result.push((nums[mid - 1] + nums[mid]) / 2);

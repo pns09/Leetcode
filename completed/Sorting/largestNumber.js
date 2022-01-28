@@ -3,6 +3,7 @@
  * @return {string}
  */
 var largestNumber = function (nums) {
+  // O(N logN) | O(1)
   if (nums.length === 1) return '' + nums[0];
 
   nums.sort((first, second) => {

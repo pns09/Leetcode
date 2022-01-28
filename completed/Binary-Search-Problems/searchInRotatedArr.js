@@ -40,3 +40,9 @@ console.log(search((nums = [1, 2, 3, 4, 5, 6]), (target = 4)));
 
 // Input: nums = [4,5,6,7,0,1,2], target = 0
 // Output: 4
+
+//one line solution
+var search = function(nums, target) {
+  // O(n) - this takes O(n) because indexof will loop thru all the array elements which does not satisfy problem constraint
+  return nums.indexOf(target);
+};

@@ -2,6 +2,7 @@
  * @param {string[]} arr
  * @return {number}
  */
+ // longest subsequence in an array
 var maxLength = function (arr) {
   let result = [''];
   let best = 0;

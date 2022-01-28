@@ -6,7 +6,9 @@
 var countPrimes = function (n) {
   if (n <= 2) return 0;
 
-  let prime = Array(n).fill(true);
+  let prime = Array(n).fill(true); // start with an assumption that everything is a prime number 
+  
+  // mark all the multiples starting from 2 as false - because multiples can never be primes
   for (let i = 2; i <= Math.sqrt(n); i++) {
     if (prime[i] == true) {
       for (let j = i * i; j < n; j += i) {

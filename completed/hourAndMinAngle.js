@@ -1,3 +1,19 @@
+/**
+ * @param {number} hour
+ * @param {number} minutes
+ * @return {number}
+ */
+var angleClock = function (hour, minutes) {
+  let oneMinAngle = 6; 
+  let oneHourAngle = 30;
+  let minAngle = minutes * oneMinAngle;
+  let hourAngle = ((hour % 12) + minutes / 60) * oneHourAngle;
+
+  let diff = Math.abs(hourAngle - minAngle);
+  return Math.min(diff, 360 - diff);
+};
+
+// old sol
 const calculateAngle = (h, m) => {
   if (h < 0 || m < 0 || h > 12 || m > 60) return -1;
 

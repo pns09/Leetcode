@@ -1,9 +1,10 @@
-// O(n) solution - Two pointer algo approach.
+// Two pointer algo approach.
 /**
  * @param {number[]} nums
  * @return {number[]}
  */
 var sortedSquares = function (nums) {
+  // O(n) | O(n)
   let sortedArr = [];
   let p1 = 0;
   let p2 = nums.length - 1;

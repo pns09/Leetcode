@@ -6,7 +6,27 @@ class LinkedList {
   }
 }
 
+// 1 - in-place modification
 function removeDuplicatesFromLinkedList(linkedList) {
+  // O(N) | O(1) - without extra space
+  let currNode = linkedList;
+
+  while (currNode !== null) {
+    let nextNode = currNode.next;
+    while (nextNode !== null && nextNode.value === currNode.value) {
+      nextNode = nextNode.next;
+    }
+
+    currNode.next = nextNode;
+    currNode = nextNode;
+  }
+
+  return linkedList;
+}
+
+// 2 - creating new linked list using extra space
+function removeDuplicatesFromLinkedList(linkedList) {
+  // O(N) | O(N)
   let uniqueList = new LinkedList(0);
   let finalList = uniqueList;
 

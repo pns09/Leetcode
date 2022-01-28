@@ -5,16 +5,22 @@
  */
 // return the total number of continuous subarrays whose sum equals to k.
 var subarraySum = function (nums, k) {
-  const map = new Map([[0, 1]]);
+  let seen = new Map();
   let sum = 0;
-  let total = 0;
-  for (let num of nums) {
-    sum = sum + num;
-    total += map.get(sum - k) || 0;
-    map.set(sum, (map.get(sum) || 0) + 1);
+  let count = 0;
+  
+  seen.set(0, 1);
+
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i];
+
+    if (sum === k || seen.has(sum - k)) {
+      count += seen.get(sum - k) || 1;
+    }
+    seen.set(sum, (seen.get(sum) || 0) + 1);
   }
 
-  return total;
+  return count;
 };
 
 // Brute force

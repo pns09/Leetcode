@@ -1,6 +1,6 @@
 function isValidSubsequence(array, sequence) {
   // Write your code here.
-  //   O(n) | O(1)
+  //   O(n) | O(1) - this is two pointer approach prob.
   let sequenceIndex = 0;
 
   for (let i = 0; i < array.length; i++) {

@@ -3,6 +3,7 @@
  * @return {string[]}
  */
 var letterCombinations = function (digits) {
+  // O(n^3) | O(n)
   if (!digits) return [];
   let letters = {
     1: ['1'],
@@ -21,7 +22,7 @@ var letterCombinations = function (digits) {
   for (let i = 0; i < digits.length; i++) {
     let digit = digits[i]; // 2
     let resLen = res.length; // 1
-    
+
     for (let j = 0; j < resLen; j++) {
       let lookUp = letters[digit];
       let firstEleInRes = res.shift();
