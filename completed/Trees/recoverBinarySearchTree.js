@@ -33,7 +33,7 @@ var recoverTree = function (root) {
     }
   }
 
-  // 3. Traverse the tree again. Change value x to y and value y to
+  // 3. Traverse the tree again. Change value x to y and value y to x
   const recover = (node, count) => {
     if (node) {
       if (node.val == x || node.val == y) {

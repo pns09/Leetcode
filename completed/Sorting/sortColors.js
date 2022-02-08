@@ -3,8 +3,8 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var sortColors = function (nums) {
+  // O(N) | O(1)
   let start = 0;
-
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] === 0) {
       const temp = nums[i];

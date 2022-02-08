@@ -25,6 +25,7 @@ var compress = function (chars) {
       counter = 1;
     }
   }
+  // return left; // 
   return chars;
 };
 

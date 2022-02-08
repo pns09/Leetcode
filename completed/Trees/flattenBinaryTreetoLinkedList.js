@@ -1,3 +1,4 @@
+// Flatten Binary Tree to Linked List
 var flatten = function (root) {
   // O(N) | O(N)
   let head = null;

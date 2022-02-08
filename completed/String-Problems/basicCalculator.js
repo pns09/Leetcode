@@ -24,6 +24,7 @@ var calculate = function (s) {
         stack.push(stack.pop() * currNum);
       } else if (operation === '/') {
         if (stack[stack.length - 1] < 0) {
+          // Math.floor of -1.5 is -2 (We want Math.ceil = -1 if negative)
           stack.push(Math.ceil(stack.pop() / currNum));
         } else {
           stack.push(Math.floor(stack.pop() / currNum));

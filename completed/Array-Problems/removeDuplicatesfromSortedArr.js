@@ -1,3 +1,16 @@
+// Working solution - TWO POINTER ALGORITHM.
+var removeDuplicates = function (nums) {
+  if (nums.length == 0) return 0;
+  var i = 0;
+  for (var j = 1; j < nums.length; j++) {
+    if (nums[j] != nums[i]) {
+      i++;
+      nums[i] = nums[j];
+    }
+  }
+  return nums;
+};
+
 // Use of while loop is best undrstood here to remove duplicates "in-place". Easy to interpret.
 // Note this only good for sorted elements in an array. not for all the combination.
 var removeDuplicates = function (nums) {
@@ -13,19 +26,6 @@ var removeDuplicates = function (nums) {
   return nums.length;
 };
 console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
-
-// Working solution - TWO POINTER ALGORITHM.
-var removeDuplicates = function (nums) {
-  if (nums.length == 0) return 0;
-  var i = 0;
-  for (var j = 1; j < nums.length; j++) {
-    if (nums[j] != nums[i]) {
-      i++;
-      nums[i] = nums[j];
-    }
-  }
-  return nums;
-};
 
 // Bugga's solution. 3 pointers - 100% faster than all solutions. - NOT SURE IF THIS IS CORRECT - CHECK AGAIN
 var removeDuplicates = function (nums) {

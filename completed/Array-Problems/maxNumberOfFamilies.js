@@ -3,7 +3,7 @@
  * @param {number[][]} reservedSeats
  * @return {number}
  */
-// cineam seat allocation
+// cinema seat allocation
 var maxNumberOfFamilies = function (n, reservedSeats) {
   let count = 0;
   let map = new Map();

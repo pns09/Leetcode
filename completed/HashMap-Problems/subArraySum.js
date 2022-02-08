@@ -5,10 +5,12 @@
  */
 // return the total number of continuous subarrays whose sum equals to k.
 var subarraySum = function (nums, k) {
+  // lly to prefix sum problem with slight change 
+  // which is why we need a map to store the frequencies of the previously calculated sum we got
   let seen = new Map();
   let sum = 0;
   let count = 0;
-  
+
   seen.set(0, 1);
 
   for (let i = 0; i < nums.length; i++) {

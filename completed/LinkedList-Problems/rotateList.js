@@ -14,6 +14,37 @@
  * @param {number} k
  * @return {ListNode}
  */
+
+var rotateRight = function (head, k) {
+  let count = 0;
+  let scanHead = head;
+  while (scanHead) {
+    count++;
+    scanHead = scanHead.next;
+  }
+
+  k = k % count;
+
+  let curr = head;
+  let prev = null;
+
+  while (curr && k > 0) {
+    if (curr.next) {
+      prev = curr;
+      curr = curr.next;
+      continue;
+    }
+
+    curr.next = head;
+    head = curr;
+    prev.next = null;
+
+    k--;
+  }
+
+  return curr;
+};
+
 const rotateRightAgain = (head, k) => {
   let lastVal, nodeToInsert;
   let newList = new ListNode();

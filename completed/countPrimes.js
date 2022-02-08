@@ -9,10 +9,10 @@ var countPrimes = function (n) {
   let prime = Array(n).fill(true); // start with an assumption that everything is a prime number 
   
   // mark all the multiples starting from 2 as false - because multiples can never be primes
-  for (let i = 2; i <= Math.sqrt(n); i++) {
+  for (let i = 2; i * i < n; i++) { // go over ele in arr 2,3,4
     if (prime[i] == true) {
-      for (let j = i * i; j < n; j += i) {
-        prime[j] = false;
+      for (let j = 2; j * i< n; j++) { // get the multiples of the ele 2,4 ; 3,6
+        prime[j * i] = false;
       }
     }
   }

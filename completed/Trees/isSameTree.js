@@ -16,7 +16,7 @@ const isSameNode = (p, q) => {
   //O(N) | O(logn) or O(n) - Recursive
   if (!p && !q) return true;
   if (!p || !q) return false;
-  return p.val === q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+  return p.val === q.val && isSameNode(p.left, q.left) && isSameNode(p.right, q.right);
 };
 
 // Iterative
