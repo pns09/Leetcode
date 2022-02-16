@@ -11,7 +11,7 @@
  * @param {TreeNode} q
  * @return {TreeNode}
  */
-// 1
+// 1 - Recursive
 var lowestCommonAncestor = function (root, p, q) {
   // if root is null or if the root matched with either p or q then the current node is ancestor
   if (root === null || root === p || root === q) {
@@ -30,21 +30,21 @@ var lowestCommonAncestor = function (root, p, q) {
   return left === null ? right : left;
 };
 
-// 2
-var lowestCommonAncestor = function (root, p, q) {
-  //O(N) | O(1) | Iterative
+//  2 - Iterative not fully functional
+// var lowestCommonAncestor = function (root, p, q) {
+//   //O(N) | O(1) | Iterative
 
-  let pVal = p.val;
-  let qVal = q.val;
+//   let pVal = p.val;
+//   let qVal = q.val;
 
-  while (root !== null) {
-    let parentVal = root.val;
-    if (pVal > parentVal && qVal > parentVal) {
-      root = root.right;
-    } else if (pVal < parentVal && qVal < parentVal) {
-      root = root.left;
-    } else {
-      return root;
-    }
-  }
-};
+//   while (root !== null) {
+//     let parentVal = root.val;
+//     if (pVal > parentVal && qVal > parentVal) {
+//       root = root.right;
+//     } else if (pVal < parentVal && qVal < parentVal) {
+//       root = root.left;
+//     } else {
+//       return root;
+//     }
+//   }
+// };

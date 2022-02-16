@@ -37,3 +37,43 @@ var letterCombinations = function (digits) {
 };
 
 console.log(letterCombinations('23'));
+
+// Backtracking solution
+/**
+ * @param {string} digits
+ * @return {string[]}
+ */
+var letterCombinations = function (digits) {
+  let combinations = [];
+  if (digits.length === 0) {
+    return combinations;
+  }
+
+  let letters = {
+    2: 'abc',
+    3: 'def',
+    4: 'ghi',
+    5: 'jkl',
+    6: 'mno',
+    7: 'pqrs',
+    8: 'tuv',
+    9: 'wxyz',
+  };
+
+  let queue = [];
+  backtrack(0, digits, letters, queue, combinations);
+  return combinations;
+};
+
+const backtrack = (index, digits, letters, queue, combi) => {
+  if (queue.length === digits.length) {
+    combi.push(queue.join(''));
+    return;
+  } else {
+    for (let item of letters[digits[index]]) {
+      queue.push(item);
+      backtrack(index + 1, digits, letters, queue, combi);
+      queue.pop();
+    }
+  }
+};

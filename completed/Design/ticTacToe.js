@@ -1,6 +1,7 @@
 /**
  * @param {number} n
  */
+// 1
 var TicTacToe = function (n) {
   this.size = n;
   this.rows = Array(n).fill(0);
@@ -40,7 +41,7 @@ TicTacToe.prototype.move = function (row, col, player) {
 // Output :
 // [null, 0, 0, 0, 0, 0, 0, 1]
 
-// Brute force
+// 2 - Brute force
 class TicTacToe {
   constructor(n) {
     this.size = n;
