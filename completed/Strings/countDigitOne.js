@@ -2,6 +2,7 @@
  * @param {number} n
  * @return {number}
  */
+// Brute Force - TLE exceeded error
 var countDigitOne = function (n) {
   let count = 0;
   for (let i = 0; i <= n; i++) {
